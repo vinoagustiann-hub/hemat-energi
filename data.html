@@ -1,0 +1,377 @@
+<!DOCTYPE html>
+<html lang="id">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Data & Fakta — Hemat Energi, Selamatkan Bumi</title>
+    <meta
+      name="description"
+      content="Bukti nyata dan data hasil kuesioner perilaku hemat energi 636 siswa kelas XI di lingkungan sekolah. Disajikan dalam bentuk grafik Chart.js interaktif."
+    />
+    <meta name="theme-color" content="#15803d" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="css/style.css" />
+  </head>
+  <body>
+    <!-- ===================== NAVBAR ===================== -->
+    <header class="navbar">
+      <div class="container navbar__inner">
+        <a class="brand" href="index.html" aria-label="HematEnergi - Beranda">
+          <span class="brand__mark" aria-hidden="true">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <path d="M9 18h6" />
+              <path d="M10 22h4" />
+              <path d="M12 2a7 7 0 0 0-4 12.7c.6.5 1 1.3 1 2.1V17h6v-.2c0-.8.4-1.6 1-2.1A7 7 0 0 0 12 2Z" />
+            </svg>
+          </span>
+          <strong>Hemat<span>Energi</span></strong>
+        </a>
+
+        <nav aria-label="Navigasi utama">
+          <ul class="nav-links" id="navLinks">
+            <li><a href="index.html">Beranda</a></li>
+            <li><a href="data.html" class="is-active">Data &amp; Fakta</a></li>
+            <li><a href="aksi.html">Aksi &amp; Rekomendasi</a></li>
+            <li><a href="tentang.html">Tentang</a></li>
+          </ul>
+        </nav>
+
+        <div class="nav-actions">
+          <a href="aksi.html" class="btn btn--primary">Ambil Aksi</a>
+          <button
+            class="nav-toggle"
+            aria-label="Buka menu navigasi"
+            aria-controls="navLinks"
+            aria-expanded="false"
+          >
+            <span></span>
+            <span></span>
+            <span></span>
+          </button>
+        </div>
+      </div>
+    </header>
+
+    <main>
+      <!-- ===================== PAGE HEADER ===================== -->
+      <section class="page-header">
+        <div class="container reveal">
+          <div class="campaign-flow">
+            <div class="flow-step">
+              <span class="flow-step__num">1</span>
+              <span>Kenali Kampanye</span>
+            </div>
+            <div class="flow-step is-current">
+              <span class="flow-step__num">2</span>
+              <span>Bukti Nyata (Data &amp; Fakta)</span>
+            </div>
+            <div class="flow-step">
+              <span class="flow-step__num">3</span>
+              <span>Aksi &amp; Rekomendasi</span>
+            </div>
+          </div>
+
+          <span class="eyebrow">Fase 2 — Bukti Nyata &amp; Data Kuesioner</span>
+          <h1>Data &amp; Fakta Perilaku Energi Sekolah</h1>
+          <p>
+            Kampanye ini dibangun di atas fakta nyata. Dari hasil pengisian kuesioner oleh 
+            <strong>636 siswa kelas XI</strong> dengan skala Likert 1–4, mari kita cermati 
+            kebiasaan mana yang sudah membudaya dan sektor mana yang paling mendesak untuk dibenahi.
+          </p>
+        </div>
+      </section>
+
+      <!-- ===================== STAT RINGKASAN ===================== -->
+      <section class="section" style="padding-bottom: 24px;">
+        <div class="container">
+          <div class="stat-grid reveal">
+            <div class="stat-card">
+              <div class="stat-card__label">Total Responden</div>
+              <div class="stat-card__value">636</div>
+              <div class="stat-card__desc">
+                Tingkat partisipasi <strong style="color: var(--green-700);">99.4%</strong> dari 639 siswa terdata kelas XI.
+              </div>
+            </div>
+
+            <div class="stat-card">
+              <div class="stat-card__label">Indeks Rata-rata Skor</div>
+              <div class="stat-card__value">3.36 <span style="font-size: 1.1rem; color: var(--ink-500); font-weight: 500;">/ 4.00</span></div>
+              <div class="stat-card__desc">
+                Predikat Keseluruhan: <span class="badge badge--green">Sangat Baik</span> (Rentang 3.26–4.00).
+              </div>
+            </div>
+
+            <div class="stat-card stat-card--accent">
+              <div class="stat-card__label">Mayoritas Berperilaku Baik</div>
+              <div class="stat-card__value">96.2%</div>
+              <div class="stat-card__desc">
+                612 dari 636 siswa berada di kategori <strong>Sangat Baik</strong> (59.4%) dan <strong>Baik</strong> (36.8%).
+              </div>
+            </div>
+
+            <div class="stat-card stat-card--accent">
+              <div class="stat-card__label">Peluang Perbaikan</div>
+              <div class="stat-card__value">13.7%</div>
+              <div class="stat-card__desc">
+                Siswa masih jarang membatasi gawai (P04) dan <strong>13.2%</strong> enggan menegur teman (P09).
+              </div>
+            </div>
+          </div>
+
+          <!-- ===================== GRAFIK 1 & 2 ===================== -->
+          <div class="chart-grid reveal">
+            <!-- Grafik 1: Kategori -->
+            <div class="chart-card">
+              <div class="chart-card__header">
+                <h3>Sebaran Kategori Perilaku Siswa</h3>
+                <p>Proporsi siswa berdasarkan kriteria skala Likert agregat (10 butir)</p>
+              </div>
+              <div class="chart-wrapper">
+                <canvas id="categoryChart"></canvas>
+              </div>
+              <div class="chart-caption">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                  <circle cx="12" cy="12" r="10" />
+                  <line x1="12" y1="16" x2="12" y2="12" />
+                  <line x1="12" y1="8" x2="12.01" y2="8" />
+                </svg>
+                <div>
+                  <strong>Inti Temuan:</strong> Sebanyak 96.2% siswa sudah memiliki kebiasaan hemat energi yang positif (Sangat Baik &amp; Baik), menjadi modal besar bagi keberhasilan gerakan ramah lingkungan di sekolah.
+                </div>
+              </div>
+            </div>
+
+            <!-- Sorotan Temuan Cepat -->
+            <div class="chart-card">
+              <div class="chart-card__header">
+                <h3>Sorotan Tertinggi vs. Terendah</h3>
+                <p>Indikator dengan skor paling memuaskan versus sektor yang butuh perhatian</p>
+              </div>
+              <div style="display: flex; flex-direction: column; gap: 16px; justify-content: center; height: 100%;">
+                <div style="background-color: var(--green-50); border: 1px solid var(--green-100); border-radius: var(--radius-sm); padding: 16px;">
+                  <div style="display: flex; align-items: center; gap: 8px; margin-bottom: 8px;">
+                    <span class="badge badge--green">3 Perilaku Tertinggi</span>
+                    <strong style="font-size: 0.95rem; color: var(--green-900);">Sudah Membudaya</strong>
+                  </div>
+                  <ul style="margin: 0; padding-left: 20px; font-size: 0.9rem; color: var(--ink-700);">
+                    <li><strong>P01 (Skor 3.51):</strong> Praktik sadar hemat energi dalam kegiatan sehari-hari (98.6% sering).</li>
+                    <li><strong>P02 (Skor 3.46):</strong> Tindakan nyata di bengkel, lab, kelas, dan rumah (95.4% sering).</li>
+                    <li><strong>P06 (Skor 3.45):</strong> Disiplin mencabut kabel charger/steker setelah dipakai (92.0% sering).</li>
+                  </ul>
+                </div>
+
+                <div style="background-color: #fffbeb; border: 1px solid #fef3c7; border-radius: var(--radius-sm); padding: 16px;">
+                  <div style="display: flex; align-items: center; gap: 8px; margin-bottom: 8px;">
+                    <span class="badge badge--yellow">3 Perilaku Terendah</span>
+                    <strong style="font-size: 0.95rem; color: #78350f;">Fokus Perbaikan</strong>
+                  </div>
+                  <ul style="margin: 0; padding-left: 20px; font-size: 0.9rem; color: var(--ink-700);">
+                    <li><strong>P04 (Skor 3.22):</strong> Pembatasan pemakaian gawai/laptop untuk hal tak perlu (13.7% jarang).</li>
+                    <li><strong>P09 (Skor 3.22):</strong> Keberanian menegur atau mengajak teman hemat listrik (13.2% jarang/canggung).</li>
+                    <li><strong>P05 (Skor 3.30):</strong> Pemilihan sarana transportasi &amp; fasilitas hemat energi (13.4% jarang).</li>
+                  </ul>
+                </div>
+              </div>
+              <div class="chart-caption chart-caption--warning">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                  <polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2" />
+                </svg>
+                <div>
+                  <strong>Arah Kampanye:</strong> Siswa sudah mandiri dalam tindakan fisik sederhana (cabut steker), namun masih terkendala pada interaksi sosial (menegur teman) dan ketergantungan gawai.
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- ===================== GRAFIK 2: 10 INDIKATOR ===================== -->
+          <div class="chart-card reveal" style="margin-bottom: 36px;">
+            <div class="chart-card__header">
+              <h3>Skor Rata-rata 10 Indikator Perilaku Energi</h3>
+              <p>Perbandingan nilai rata-rata tiap butir pernyataan kuesioner (Skala 1.00 – 4.00)</p>
+            </div>
+            <div class="chart-wrapper chart-wrapper--tall">
+              <canvas id="indicatorsChart"></canvas>
+            </div>
+            <div class="chart-caption">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                <circle cx="12" cy="12" r="10" />
+                <line x1="12" y1="16" x2="12" y2="12" />
+                <line x1="12" y1="8" x2="12.01" y2="8" />
+              </svg>
+              <div>
+                <strong>Inti Temuan:</strong> Perilaku mencabut kabel (P06: 3.45) dan memastikan alat mati sebelum pulang (P10: 3.41) tergolong sangat tinggi, tetapi pembatasan pemakaian laptop (P04: 3.22) dan ajakan antarteman (P09: 3.22) masih menjadi titik terlemah.
+              </div>
+            </div>
+          </div>
+
+          <!-- ===================== GRAFIK 3 & 4 ===================== -->
+          <div class="chart-grid reveal">
+            <!-- Grafik 3: Per Jurusan -->
+            <div class="chart-card">
+              <div class="chart-card__header">
+                <h3>Perbandingan Indeks Hemat Energi Antar Jurusan</h3>
+                <p>Rata-rata skor perilaku berdasarkan 7 program keahlian kelas XI</p>
+              </div>
+              <div class="chart-wrapper">
+                <canvas id="majorChart"></canvas>
+              </div>
+              <div class="chart-caption">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                  <path d="M3 3v18h18" />
+                  <path d="m19 9-5 5-4-4-3 3" />
+                </svg>
+                <div>
+                  <strong>Inti Temuan:</strong> Jurusan Pemasaran (PMN: 3.51) dan Perhotelan (HTL: 3.46) memimpin skor tertinggi, sementara jurusan berbasis laboratorium komputer (PPLG: 3.24 dan MPLB: 3.24) memerlukan perhatian khusus pada konsumsi daya perangkat.
+                </div>
+              </div>
+            </div>
+
+            <!-- Grafik 4: Distribusi Skor Total -->
+            <div class="chart-card">
+              <div class="chart-card__header">
+                <h3>Distribusi Sebaran Skor Total Responden</h3>
+                <p>Jumlah siswa pada tiap perolehan nilai total (rentang skor 10 s.d. 40)</p>
+              </div>
+              <div class="chart-wrapper">
+                <canvas id="distributionChart"></canvas>
+              </div>
+              <div class="chart-caption">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                  <circle cx="12" cy="12" r="10" />
+                  <line x1="12" y1="16" x2="12" y2="12" />
+                  <line x1="12" y1="8" x2="12.01" y2="8" />
+                </svg>
+                <div>
+                  <strong>Inti Temuan:</strong> Skor siswa terkonsentrasi dominan pada kelompok skor tinggi 30–40, di mana sebanyak 86 siswa bahkan berhasil meraih skor sempurna 40 poin.
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- ===================== TABEL DATA DETAIL ===================== -->
+          <div class="table-container reveal">
+            <div class="table-header">
+              <div>
+                <h3>Rincian Lengkap 10 Indikator Perilaku Energi</h3>
+                <p style="font-size: 0.9rem; color: var(--ink-500); margin-top: 4px;">
+                  Data agregat hasil respon 636 siswa kelas XI (Skala 1.00 – 4.00)
+                </p>
+              </div>
+              <span class="badge badge--green">636 Data Bersih Terverifikasi</span>
+            </div>
+
+            <div class="table-responsive">
+              <table class="data-table">
+                <thead>
+                  <tr>
+                    <th>Kode</th>
+                    <th>Indikator &amp; Bunyi Pernyataan</th>
+                    <th>Rata-rata Skor</th>
+                    <th>Tingkat Rutinitas</th>
+                    <th>Evaluasi</th>
+                  </tr>
+                </thead>
+                <tbody id="indicatorTableBody">
+                  <!-- Diisi secara dinamis oleh js/data-charts.js -->
+                </tbody>
+              </table>
+            </div>
+          </div>
+
+          <!-- ===================== TEASER CALLOUT KE FASE 3 ===================== -->
+          <div class="callout reveal">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+              <polygon points="13 2 3 14 12 14 11 22 21 10 12 10 13 2" />
+            </svg>
+            <div style="flex: 1;">
+              <h4>Data Menunjukkan Jalan Keluar yang Jelas</h4>
+              <p>
+                Kita tidak boleh berhenti pada angka dan grafik. Masalah laptop yang menyala berlebihan, 
+                rasa sungkan menegur kawan, dan charger yang lupa dicabut harus dijawab dengan 
+                rekomendasi konkret serta tantangan nyata.
+              </p>
+            </div>
+            <a href="aksi.html" class="btn btn--primary" style="white-space: nowrap; flex-shrink: 0;">
+              Lanjut ke Halaman Aksi &rarr;
+            </a>
+          </div>
+        </div>
+      </section>
+
+      <!-- ===================== CTA ===================== -->
+      <section class="section" style="padding-top: 0;">
+        <div class="container">
+          <div class="cta reveal">
+            <div>
+              <h2>Siap Mengubah Data Menjadi Perilaku Nyata?</h2>
+              <p>
+                Pelajari 5 rekomendasi terarah kami, tantang diri Anda dalam Tantangan 7 Hari, 
+                dan terbitkan Kartu Komitmen Hemat Energi Anda sekarang juga!
+              </p>
+            </div>
+            <a href="aksi.html" class="btn btn--accent">Buka Halaman Aksi &amp; Rekomendasi</a>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <!-- ===================== FOOTER ===================== -->
+    <footer class="footer">
+      <div class="container">
+        <div class="footer__grid">
+          <div>
+            <a class="brand" href="index.html">
+              <span class="brand__mark" aria-hidden="true">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                  <path d="M9 18h6" />
+                  <path d="M10 22h4" />
+                  <path d="M12 2a7 7 0 0 0-4 12.7c.6.5 1 1.3 1 2.1V17h6v-.2c0-.8.4-1.6 1-2.1A7 7 0 0 0 12 2Z" />
+                </svg>
+              </span>
+              <strong>Hemat<span>Energi</span></strong>
+            </a>
+            <p class="footer__about">
+              Media kampanye edukasi energi berkelanjutan (ESD). Berbasis bukti data riil 
+              kuesioner perilaku siswa untuk mewujudkan sekolah hemat energi.
+            </p>
+          </div>
+
+          <div>
+            <h4>Navigasi</h4>
+            <ul>
+              <li><a href="index.html">Beranda</a></li>
+              <li><a href="data.html">Data &amp; Fakta</a></li>
+              <li><a href="aksi.html">Aksi &amp; Rekomendasi</a></li>
+              <li><a href="tentang.html">Tentang Proyek</a></li>
+            </ul>
+          </div>
+
+          <div>
+            <h4>Fase Kampanye</h4>
+            <ul>
+              <li>Fase 1: Tampilan &amp; Layout Dasar</li>
+              <li>Fase 2: Penyajian Data &amp; Chart.js</li>
+              <li>Fase 3: Rekomendasi &amp; Ajakan Aksi</li>
+            </ul>
+          </div>
+        </div>
+
+        <div class="footer__bottom">
+          <span>&copy; <span data-year>2026</span> HematEnergi — Kampanye Sekolah Berkelanjutan (ESD).</span>
+          <span>Data Sumber: Kuesioner Perilaku Energi Siswa Kelas XI (636 Responden).</span>
+        </div>
+      </div>
+    </footer>
+
+    <!-- Library & Scripts -->
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <script src="data-perilaku-energi.js"></script>
+    <script src="js/data-charts.js"></script>
+    <script src="js/script.js"></script>
+  </body>
+</html>

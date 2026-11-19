@@ -735,3 +735,830 @@ p {
     flex: 1 1 auto;
   }
 }
+
+/* =========================================================
+   Fase 2 & Fase 3 — Komponen Data, Fakta, & Aksi Rekomendasi
+   ========================================================= */
+
+/* ---------- Alur Kampanye Indicator ---------- */
+.campaign-flow {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 16px;
+  margin-bottom: 40px;
+}
+
+.flow-step {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  padding: 14px 18px;
+  background-color: var(--white);
+  border: 1px solid var(--line);
+  border-radius: var(--radius-sm);
+  color: var(--ink-700);
+  font-size: 0.92rem;
+  font-weight: 500;
+  transition: all 0.2s ease;
+}
+
+.flow-step.is-current {
+  background-color: var(--green-50);
+  border-color: var(--green-600);
+  color: var(--green-900);
+  font-weight: 700;
+  box-shadow: var(--shadow-sm);
+}
+
+.flow-step__num {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 28px;
+  height: 28px;
+  border-radius: 50%;
+  background-color: var(--green-100);
+  color: var(--green-700);
+  font-size: 0.85rem;
+  font-weight: 700;
+  flex-shrink: 0;
+}
+
+.flow-step.is-current .flow-step__num {
+  background-color: var(--green-600);
+  color: var(--white);
+}
+
+/* ---------- Stat Cards (Fase 2) ---------- */
+.stat-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 20px;
+  margin-bottom: 48px;
+}
+
+.stat-card {
+  background-color: var(--white);
+  border: 1px solid var(--line);
+  border-radius: var(--radius);
+  padding: 24px;
+  box-shadow: var(--shadow-sm);
+  position: relative;
+  overflow: hidden;
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.stat-card::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 4px;
+  background-color: var(--green-600);
+}
+
+.stat-card--accent::before {
+  background-color: var(--yellow-400);
+}
+
+.stat-card:hover {
+  transform: translateY(-2px);
+  box-shadow: var(--shadow-md);
+}
+
+.stat-card__label {
+  font-size: 0.88rem;
+  font-weight: 600;
+  color: var(--ink-500);
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+  margin-bottom: 8px;
+}
+
+.stat-card__value {
+  font-size: clamp(2rem, 3.5vw, 2.5rem);
+  font-weight: 800;
+  color: var(--ink-900);
+  line-height: 1.1;
+  margin-bottom: 8px;
+}
+
+.stat-card__desc {
+  font-size: 0.88rem;
+  color: var(--ink-700);
+}
+
+/* ---------- Chart Grid & Wrappers (Fase 2) ---------- */
+.chart-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 28px;
+  margin-bottom: 36px;
+}
+
+.chart-grid--full {
+  grid-template-columns: 1fr;
+}
+
+.chart-card {
+  background-color: var(--white);
+  border: 1px solid var(--line);
+  border-radius: var(--radius);
+  padding: 26px;
+  box-shadow: var(--shadow-sm);
+  display: flex;
+  flex-direction: column;
+}
+
+.chart-card__header {
+  margin-bottom: 20px;
+}
+
+.chart-card__header h3 {
+  font-size: 1.2rem;
+  font-weight: 700;
+  color: var(--ink-900);
+  margin-bottom: 4px;
+}
+
+.chart-card__header p {
+  font-size: 0.92rem;
+  color: var(--ink-500);
+}
+
+.chart-wrapper {
+  position: relative;
+  width: 100%;
+  min-height: 300px;
+  max-height: 380px;
+  flex: 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.chart-wrapper--tall {
+  min-height: 380px;
+  max-height: 480px;
+}
+
+.chart-caption {
+  margin-top: 20px;
+  padding: 14px 18px;
+  background-color: var(--green-50);
+  border-left: 4px solid var(--green-600);
+  border-radius: 0 var(--radius-sm) var(--radius-sm) 0;
+  font-size: 0.92rem;
+  color: var(--ink-700);
+  line-height: 1.55;
+  display: flex;
+  align-items: flex-start;
+  gap: 12px;
+}
+
+.chart-caption--warning {
+  background-color: #fffbeb;
+  border-left-color: var(--yellow-500);
+}
+
+.chart-caption svg {
+  width: 20px;
+  height: 20px;
+  flex-shrink: 0;
+  color: var(--green-700);
+  margin-top: 2px;
+}
+
+.chart-caption--warning svg {
+  color: #b45309;
+}
+
+/* ---------- Badges ---------- */
+.badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  padding: 4px 10px;
+  border-radius: 999px;
+  font-size: 0.78rem;
+  font-weight: 600;
+  line-height: 1;
+}
+
+.badge--green {
+  background-color: var(--green-100);
+  color: var(--green-900);
+}
+
+.badge--yellow {
+  background-color: var(--yellow-100);
+  color: #854d0e;
+}
+
+.badge--amber {
+  background-color: #fef3c7;
+  color: #92400e;
+}
+
+.badge--blue {
+  background-color: #dbeafe;
+  color: #1e40af;
+}
+
+/* ---------- Data Table (Fase 2) ---------- */
+.table-container {
+  background-color: var(--white);
+  border: 1px solid var(--line);
+  border-radius: var(--radius);
+  overflow: hidden;
+  box-shadow: var(--shadow-sm);
+  margin-top: 28px;
+}
+
+.table-header {
+  padding: 20px 24px;
+  border-bottom: 1px solid var(--line);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 12px;
+}
+
+.table-header h3 {
+  font-size: 1.15rem;
+  font-weight: 700;
+}
+
+.table-responsive {
+  width: 100%;
+  overflow-x: auto;
+}
+
+.data-table {
+  width: 100%;
+  border-collapse: collapse;
+  text-align: left;
+  font-size: 0.92rem;
+}
+
+.data-table th,
+.data-table td {
+  padding: 14px 20px;
+  border-bottom: 1px solid var(--line);
+}
+
+.data-table th {
+  background-color: var(--green-50);
+  font-weight: 700;
+  color: var(--ink-900);
+  white-space: nowrap;
+}
+
+.data-table tbody tr:hover {
+  background-color: rgba(240, 253, 244, 0.4);
+}
+
+.data-table tbody tr:last-child td {
+  border-bottom: none;
+}
+
+.data-table .code-cell {
+  font-weight: 700;
+  color: var(--green-700);
+  white-space: nowrap;
+}
+
+.data-table .score-cell {
+  font-weight: 700;
+  color: var(--ink-900);
+}
+
+/* ---------- Filter Tabs (Fase 2) ---------- */
+.tabs {
+  display: inline-flex;
+  gap: 6px;
+  background-color: var(--green-50);
+  padding: 6px;
+  border-radius: var(--radius-sm);
+  border: 1px solid var(--line);
+  margin-bottom: 24px;
+}
+
+.tab-btn {
+  padding: 8px 16px;
+  border-radius: 6px;
+  border: none;
+  background: transparent;
+  font-size: 0.9rem;
+  font-weight: 600;
+  color: var(--ink-700);
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.tab-btn:hover {
+  color: var(--green-700);
+}
+
+.tab-btn.is-active {
+  background-color: var(--white);
+  color: var(--green-700);
+  box-shadow: var(--shadow-sm);
+}
+
+/* ---------- Rekomendasi Konkret (Fase 3) ---------- */
+.rec-list {
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+  margin-top: 36px;
+}
+
+.rec-card {
+  background-color: var(--white);
+  border: 1px solid var(--line);
+  border-radius: var(--radius);
+  padding: 28px;
+  box-shadow: var(--shadow-sm);
+  display: grid;
+  grid-template-columns: auto 1fr;
+  gap: 24px;
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.rec-card:hover {
+  transform: translateY(-2px);
+  box-shadow: var(--shadow-md);
+}
+
+.rec-card__num {
+  width: 44px;
+  height: 44px;
+  border-radius: 12px;
+  background-color: var(--green-600);
+  color: var(--white);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.25rem;
+  font-weight: 800;
+  flex-shrink: 0;
+}
+
+.rec-card__content h3 {
+  font-size: 1.2rem;
+  font-weight: 700;
+  color: var(--ink-900);
+  margin-bottom: 8px;
+}
+
+.rec-card__meta {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 10px;
+  margin-bottom: 14px;
+}
+
+.rec-card__data-evidence {
+  padding: 10px 14px;
+  background-color: var(--yellow-100);
+  border-radius: var(--radius-sm);
+  font-size: 0.88rem;
+  color: #713f12;
+  margin-bottom: 16px;
+  line-height: 1.5;
+}
+
+.rec-card__data-evidence strong {
+  color: #451a03;
+}
+
+.rec-card__actions {
+  margin: 0;
+  padding-left: 20px;
+  color: var(--ink-700);
+  font-size: 0.95rem;
+}
+
+.rec-card__actions li {
+  margin-bottom: 8px;
+}
+
+.rec-card__impact {
+  margin-top: 14px;
+  padding-top: 12px;
+  border-top: 1px dashed var(--line);
+  font-size: 0.88rem;
+  color: var(--green-700);
+  font-weight: 600;
+  display: flex;
+  align-items: center;
+  gap: 6px;
+}
+
+/* ---------- Interactive Challenge (Fase 3) ---------- */
+.challenge-box {
+  background-color: var(--white);
+  border: 1px solid var(--line);
+  border-radius: var(--radius);
+  padding: 32px;
+  box-shadow: var(--shadow-sm);
+  margin-top: 40px;
+}
+
+.challenge-box__header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 16px;
+  margin-bottom: 24px;
+}
+
+.challenge-progress {
+  width: 100%;
+  margin-bottom: 28px;
+}
+
+.challenge-progress__info {
+  display: flex;
+  justify-content: space-between;
+  font-size: 0.9rem;
+  font-weight: 600;
+  margin-bottom: 8px;
+  color: var(--ink-700);
+}
+
+.challenge-progress__bar {
+  width: 100%;
+  height: 12px;
+  background-color: var(--line);
+  border-radius: 999px;
+  overflow: hidden;
+}
+
+.challenge-progress__fill {
+  height: 100%;
+  background-color: var(--green-600);
+  width: 0%;
+  transition: width 0.3s ease;
+  border-radius: 999px;
+}
+
+.challenge-list {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 14px;
+}
+
+.challenge-item {
+  display: flex;
+  align-items: flex-start;
+  gap: 14px;
+  padding: 16px;
+  border: 1px solid var(--line);
+  border-radius: var(--radius-sm);
+  background-color: var(--white);
+  cursor: pointer;
+  transition: all 0.2s ease;
+  user-select: none;
+}
+
+.challenge-item:hover {
+  background-color: var(--green-50);
+  border-color: var(--green-600);
+}
+
+.challenge-item.is-completed {
+  background-color: var(--green-50);
+  border-color: var(--green-600);
+}
+
+.challenge-item input[type="checkbox"] {
+  width: 20px;
+  height: 20px;
+  margin-top: 3px;
+  accent-color: var(--green-600);
+  cursor: pointer;
+}
+
+.challenge-item__body {
+  flex: 1;
+}
+
+.challenge-item__day {
+  font-size: 0.78rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  color: var(--green-700);
+  letter-spacing: 0.05em;
+  margin-bottom: 2px;
+}
+
+.challenge-item__title {
+  font-size: 1rem;
+  font-weight: 700;
+  color: var(--ink-900);
+  margin-bottom: 4px;
+}
+
+.challenge-item.is-completed .challenge-item__title {
+  text-decoration: line-through;
+  color: var(--ink-500);
+}
+
+.challenge-item__desc {
+  font-size: 0.9rem;
+  color: var(--ink-500);
+}
+
+/* ---------- Digital Commitment Pledge (Fase 3) ---------- */
+.pledge-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 32px;
+  align-items: start;
+  margin-top: 36px;
+}
+
+.pledge-form {
+  background-color: var(--white);
+  border: 1px solid var(--line);
+  border-radius: var(--radius);
+  padding: 28px;
+  box-shadow: var(--shadow-sm);
+}
+
+.form-group {
+  margin-bottom: 18px;
+}
+
+.form-group label {
+  display: block;
+  font-size: 0.92rem;
+  font-weight: 600;
+  color: var(--ink-900);
+  margin-bottom: 8px;
+}
+
+.form-control {
+  width: 100%;
+  padding: 12px 14px;
+  border: 1px solid var(--line);
+  border-radius: var(--radius-sm);
+  font-family: var(--font);
+  font-size: 0.95rem;
+  transition: border-color 0.2s ease;
+}
+
+.form-control:focus {
+  outline: none;
+  border-color: var(--green-600);
+  box-shadow: 0 0 0 3px rgba(22, 163, 74, 0.15);
+}
+
+.checkbox-options {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.checkbox-option {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  font-size: 0.92rem;
+  color: var(--ink-700);
+  cursor: pointer;
+}
+
+.checkbox-option input {
+  accent-color: var(--green-600);
+  width: 17px;
+  height: 17px;
+}
+
+/* Rendered Pledge Card */
+.pledge-card {
+  background: linear-gradient(135deg, var(--green-900) 0%, var(--green-700) 100%);
+  color: var(--white);
+  border-radius: var(--radius);
+  padding: 32px;
+  box-shadow: var(--shadow-md);
+  position: relative;
+  overflow: hidden;
+}
+
+.pledge-card::after {
+  content: "";
+  position: absolute;
+  top: -40px;
+  right: -40px;
+  width: 160px;
+  height: 160px;
+  border-radius: 50%;
+  background: rgba(255, 255, 255, 0.05);
+  pointer-events: none;
+}
+
+.pledge-card__header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.18);
+  padding-bottom: 16px;
+  margin-bottom: 20px;
+}
+
+.pledge-card__badge {
+  background-color: var(--yellow-400);
+  color: var(--ink-900);
+  font-size: 0.78rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  padding: 4px 10px;
+  border-radius: 999px;
+  letter-spacing: 0.04em;
+}
+
+.pledge-card__name {
+  font-size: 1.6rem;
+  font-weight: 800;
+  color: var(--yellow-400);
+  margin-bottom: 4px;
+}
+
+.pledge-card__identity {
+  font-size: 0.92rem;
+  color: var(--green-100);
+  margin-bottom: 20px;
+}
+
+.pledge-card__text {
+  font-size: 1rem;
+  line-height: 1.6;
+  color: var(--white);
+  margin-bottom: 24px;
+}
+
+.pledge-card__actions-list {
+  background: rgba(0, 0, 0, 0.15);
+  padding: 16px 20px;
+  border-radius: var(--radius-sm);
+  margin-bottom: 20px;
+}
+
+.pledge-card__actions-list ul {
+  margin: 0;
+  padding-left: 18px;
+  font-size: 0.9rem;
+  color: var(--green-100);
+}
+
+.pledge-card__actions-list li {
+  margin-bottom: 6px;
+}
+
+.pledge-card__footer {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-size: 0.8rem;
+  color: rgba(255, 255, 255, 0.7);
+  border-top: 1px solid rgba(255, 255, 255, 0.15);
+  padding-top: 14px;
+}
+
+/* ---------- Tips Matrix Grid ---------- */
+.tips-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 24px;
+  margin-top: 36px;
+}
+
+.tip-card {
+  background-color: var(--white);
+  border: 1px solid var(--line);
+  border-radius: var(--radius);
+  padding: 24px;
+  box-shadow: var(--shadow-sm);
+}
+
+.tip-card__icon {
+  width: 44px;
+  height: 44px;
+  border-radius: 10px;
+  background-color: var(--green-100);
+  color: var(--green-700);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 16px;
+}
+
+.tip-card h3 {
+  font-size: 1.1rem;
+  font-weight: 700;
+  margin-bottom: 12px;
+}
+
+.tip-card ul {
+  margin: 0;
+  padding-left: 20px;
+  font-size: 0.92rem;
+  color: var(--ink-700);
+}
+
+.tip-card li {
+  margin-bottom: 8px;
+}
+
+/* ---------- Callout Box ---------- */
+.callout {
+  background-color: var(--green-50);
+  border: 1px solid var(--green-100);
+  border-radius: var(--radius);
+  padding: 24px;
+  margin-top: 28px;
+  display: flex;
+  align-items: flex-start;
+  gap: 16px;
+}
+
+.callout svg {
+  width: 24px;
+  height: 24px;
+  color: var(--green-700);
+  flex-shrink: 0;
+}
+
+.callout h4 {
+  font-size: 1rem;
+  font-weight: 700;
+  color: var(--green-900);
+  margin-bottom: 4px;
+}
+
+.callout p {
+  font-size: 0.92rem;
+  color: var(--ink-700);
+  margin: 0;
+}
+
+/* ---------- Responsive for Fase 2 & 3 ---------- */
+@media (max-width: 992px) {
+  .stat-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .chart-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .pledge-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .tips-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .campaign-flow {
+    grid-template-columns: 1fr;
+    gap: 8px;
+  }
+}
+
+@media (max-width: 640px) {
+  .stat-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .rec-card {
+    grid-template-columns: 1fr;
+    gap: 16px;
+  }
+
+  .rec-card__num {
+    width: 36px;
+    height: 36px;
+    font-size: 1.1rem;
+  }
+
+  .chart-wrapper {
+    min-height: 260px;
+  }
+
+  .chart-card {
+    padding: 18px;
+  }
+
+  .challenge-box {
+    padding: 20px;
+  }
+}
+
